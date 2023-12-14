@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Red social</title>
+    
+</head>
+
+<body>
+    <h1>Formulario de contacto</h1>
+    <form action="/pagServidor" method="get">
+        <legend></legend>
+        <div>
+            <label for="nom">Nombre</label>
+            <input type="text" name="nombre" id="nom" maxlenght="25" placeholder=" Escribe tu Nombre" />
+        </div>
+        <legend></legend>
+        <div>
+            <label for="edad"> introduce tu Edad</label>
+            <input type="number" id="edad" max="120" min="18"/>
+        </div>
+        <legend></legend>
+        <div>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="em" placeholder="correo@empresa.com">
+        </div>
+        <legend></legend>
+        <div>
+            <label for="tarifa">Asunto</label>
+            <select name="tarifa" id="tarifa">
+                <optgroup label="Pedir presupueso web">
+                    <option>Pedir presupuesto web</option>
+                    <option>solicitar cita previa</option>
+                    <option>otros</option>
+                </optgroup>
+            </select>
+        </div>
+        <legend></legend>
+      
+        
+    </form>
+    <footer>
+        <p>&copy; 2023. Todos los derechos reservados. | Síguenos en:
+            <a href target="_blank" rel="noopener noreferrer">Facebook</a>,
+            <a href target="_blank" rel="noopener noreferrer">Twitter</a>,
+            <a href target="_blank" rel="noopener noreferrer">Instagram</a>
+        </p>
+    </footer>
+</body>
+
+</html>
