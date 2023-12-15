@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <title>Red social</title>
-    
-</head>
-
-<body>
+    <title>Formulario de contacto</title>
+    <style>
+        body {
+            margin: 0 auto;
+             width: 390px;
+        }
+        legend{
+            margin: 4%;
+        }
+    </style>
+  </head>
+  <body>
     <h1>Formulario de contacto</h1>
     <form action="/pagServidor" method="get">
         <legend></legend>
         <div>
-            <label for="nom">Nombre</label>
+            <label for="nom">Nombre:</label>
             <input type="text" name="nombre" id="nom" maxlenght="25" placeholder=" Escribe tu Nombre" />
         </div>
         <legend></legend>
@@ -37,16 +43,33 @@
             </select>
         </div>
         <legend></legend>
-      
-        
+            <legend>¿Como nos ha conocido?</legend>
+            <div>
+                <input type="checkbox" id="conocido" name="un amigo"/>
+                <label for="conocido">Un amigo</label>
+                <input type="checkbox" id="conocido" name="en un buscador"/>
+                <label for="conocido">En un buscador Web </label>
+                <input type="checkbox" id="conocido" name="publicidad"/>
+                <label for="conocido">Publicidad</label>
+                <input type="checkbox" id="conocido" name="otros"/>
+                <label for="conocido">Otros</label>
+            </div>
+        <legend></legend>
+        <div>
+            <label for="ms">Escribe tu mensaje</label>
+            <legend></legend>
+            <textarea id="ms" name="mens"></textarea>
+        </div>
+        <legend></legend>
+        <div>
+            <input type="checkbox" id="avisolegal" name="he leído"/>
+            <label for="avisolegal">He leido y acepto el <a href="#aviso legal y la polita de privacidad" >aviso legal y la polita de privacidad</a></label>       
+        </div>
+        <legend></legend>
+        <div id="enviar">
+            <button type="submit" value="enviar">Enviar formulario</button>
+        </div>
     </form>
-    <footer>
-        <p>&copy; 2023. Todos los derechos reservados. | Síguenos en:
-            <a href target="_blank" rel="noopener noreferrer">Facebook</a>,
-            <a href target="_blank" rel="noopener noreferrer">Twitter</a>,
-            <a href target="_blank" rel="noopener noreferrer">Instagram</a>
-        </p>
-    </footer>
 </body>
 
 </html>
