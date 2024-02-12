@@ -8,11 +8,12 @@
     <script type="text/javascript">
         // Crear un array con los primeros 10 números
         var numerosPares = [];
-        for (var i = 0; i <= 36; i +=2) {
+        for (var i = 0; i <= 38; i +=2) {
             numerosPares.push(i);
+            numerosPares[i-1]=i;
         }
 
-        // Mostrar los números en la pantalla separados por un espacio
+        // Mostrar por pantalla
         document.write(numerosPares.join(' '));
     </script>
 </body>

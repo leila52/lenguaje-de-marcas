@@ -9,7 +9,7 @@ if(numero2>0) {
 document.write("numero2 es positivo");
 }
 //condicion numero1 es negativo o distinto a cero
-if(numero1<0 || numero1 !==0) {
+if(numero1<0 || numero1 !=0) {
 document.write("numero1 es negativo o distinto de cero");
 }
 //incrementamos en 1 unidad el valor de numero1 no lo hace mayor o igual q numero2

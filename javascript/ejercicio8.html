@@ -7,18 +7,18 @@
 </head>
 <body>
     <script type="text/javascript">
-        // Función para generar un número aleatorio entre min y max (ambos incluidos)
+        // Función para generar un número aleatorio entre min y max 
         function generarNumeroAleatorio(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        // Generar 6 números aleatorios entre 1 y 49
+        // Generar 6 números ale entre 1 y 49
         var resultadoPrimitiva = [];
         for (var i = 0; i < 6; i++) {
             resultadoPrimitiva.push(generarNumeroAleatorio(1, 49));
         }
 
-        // Mostrar el resultado
+        // result
         document.write("<p>Números de la Primitiva: " + resultadoPrimitiva.join(', ') + "</p>");
     </script>
 </body>
