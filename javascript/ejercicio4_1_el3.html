@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario de Contacto</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .solicitud-input {
+            border: 1px solid red;
+        }
+        .solicitud-input.error {
+            border: 1px solid red;
+        }
+
+        .solicitud-input-label {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function mostrarSolicitudInput() {
+            var asunto = document.getElementById('asunto').value;
+            var solicitudInput = document.getElementById('solicitud-input');
+            var solicitudInputLabel = document.getElementById('solicitud-input-label');
+
+            if (asunto === "Estado de una solicitud") {
+                solicitudInput.style.display = 'block';
+                solicitudInputLabel.style.display = 'block';
+            } else {
+                solicitudInput.style.display = 'none';
+                solicitudInputLabel.style.display = 'none';
+            }
+        }
+
+        function validarFormulario() {
+            var nombre = document.getElementById('nombre').value;
+            var email = document.getElementById('email').value;
+            var asunto = document.getElementById('asunto').value;
+            var solicitudNumero = document.getElementById('solicitud-numero').value;
+            var mensaje =document.getElementById('menajse').value;
+
+            if (nombre === '' || email === '' || asunto === '' || mensaje === '') {
+                alert('Todos los campos son obligatorios.');
+                return false;
+            }
+
+            if (asunto === "Estado de una solicitud" && solicitudNumero === '') {
+                alert('Nº de la solicitud.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Solitud de informacion</h1>
+    <form name="contactForm" onsubmit="return validarFormulario();">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="asunto">Asunto:</label>
+        <select id="asunto" name="asunto" onchange="mostrarSolicitudInput();" required>
+            <option value="">Selecciona</option>
+            <option value="Pedir información">Pedir información</option>
+            <option value="Estado de una solicitud">Estado de una solicitud</option>
+            <option value="Otros">Otros</option>
+        </select>
+
+        <div id="solicitud-input" style="display: none;">
+            <label for="solicitud-numero" class="solicitud-input-label">Nº de solicitud:</label>
+            <input type="text" id="solicitud-numero" name="solicitud-numero">
+        </div>
+
+        <label for="mensaje">Escribe un mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
