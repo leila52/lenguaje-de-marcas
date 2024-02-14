@@ -34,14 +34,14 @@
             box-sizing: border-box;
         }
 
-        .solicitud-input {
+        .solicitud1 {
             border: 1px solid red;
         }
-        .solicitud-input.error {
+        #solicitud-numero{
             border: 1px solid red;
         }
 
-        .solicitud-input-label {
+        .solicitud2{
             color: red;
             font-size: 0.9em;
             margin-top: 5px;
@@ -63,15 +63,15 @@
     <script>
         function mostrarSolicitudInput() {
             var asunto = document.getElementById('asunto').value;
-            var solicitudInput = document.getElementById('solicitud-input');
-            var solicitudInputLabel = document.getElementById('solicitud-input-label');
+            var solicitud1 = document.getElementById('solicitud1');
+            var solicitud2 = document.getElementById('solicitud2');
 
-            if (asunto === "Estado de una solicitud") {
-                solicitudInput.style.display = 'block';
-                solicitudInputLabel.style.display = 'block';
+            if (asunto == "Estado de una solicitud") {
+                solicitud1.style.display = 'block';
+                solicitud2.style.display = 'block';
             } else {
-                solicitudInput.style.display = 'none';
-                solicitudInputLabel.style.display = 'none';
+                solicitud1.style.display = 'none';
+                solicitud2.style.display = 'none';
             }
         }
 
@@ -80,7 +80,7 @@
             var email = document.getElementById('email').value;
             var asunto = document.getElementById('asunto').value;
             var solicitudNumero = document.getElementById('solicitud-numero').value;
-            var mensaje =document.getElementById('menajse').value;
+            var mensaje =document.getElementById('mensaje').value;
 
             if (nombre === '' || email === '' || asunto === '' || mensaje === '') {
                 alert('Todos los campos son obligatorios.');
@@ -101,26 +101,26 @@
     <h1>Solitud de informacion</h1>
     <form name="contactForm" onsubmit="return validarFormulario();">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" >
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email">
 
         <label for="asunto">Asunto:</label>
-        <select id="asunto" name="asunto" onchange="mostrarSolicitudInput();" required>
+        <select id="asunto" name="asunto" onchange="mostrarSolicitudInput();">
             <option value="">Selecciona</option>
             <option value="Pedir información">Pedir información</option>
             <option value="Estado de una solicitud">Estado de una solicitud</option>
             <option value="Otros">Otros</option>
         </select>
 
-        <div id="solicitud-input" style="display: none;">
-            <label for="solicitud-numero" class="solicitud-input-label">Nº de solicitud:</label>
+        <div id="solicitud1" style="display: none;">
+            <label for="solicitud-numero" class="solicitud2">Nº de solicitud:</label>
             <input type="text" id="solicitud-numero" name="solicitud-numero">
         </div>
 
         <label for="mensaje">Escribe un mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <textarea id="mensaje" name="mensaje" rows="4" ></textarea>
 
         <button type="submit">Enviar</button>
     </form>

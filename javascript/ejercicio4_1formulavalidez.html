@@ -44,6 +44,19 @@
         }
     </style>
     <script>
+        function mostrarSolicitudInput() {
+            var asunto = document.getElementById('asunto').value;
+            var solicitudInput = document.getElementById('solicitud-input');
+            var solicitudInputLabel = document.getElementById('solicitud-input-label');
+
+            if (asunto === "Estado de una solicitud") {
+                solicitudInput.style.display = 'block';
+                solicitudInputLabel.style.display = 'block';
+            } else {
+                solicitudInput.style.display = 'none';
+                solicitudInputLabel.style.display = 'none';
+            }
+        }
         function validar(){
             var nombre= document.getElementById('nombre').value;
             var apellido= document.getElementById('ape').value;
@@ -56,6 +69,7 @@
                 document.getElementById('error').style.display= 'block';
                 return false;
             }
+
              // validar mayor de edad
              if(parseInt(edad)< 18){
                 alert('debes se mayor de edad');
