@@ -4,20 +4,18 @@ let puntos_usu_span;
 let puntos_ord_span;
 let resultado;
 let img_Ord;
-
+let div_ImgOrd;
 
 this.onload = function () {
     iniciar();
 }
 function iniciar() {
-     //Asignamos a las variables globales declaradas los elementos HTML
-     puntos_usu_span = document.getElementById("puntos_usuario");
-     puntos_ord_span = document.getElementById("puntos_orde");
-     resultado = document.getElementById("p_ordenador");
-     opcion_Ord = document.getElementById("jugada_ordenador");
-     img_Ord = document.getElementById("imag_ordenador");
-     div_ImgOrd=document.getElementById("jugada de ordenador");
-    
+    //Asignamos a las variables globales declaradas los elementos HTML
+    puntos_usu_span = document.getElementById("puntos_Usu");
+     puntos_ord_span = document.getElementById("puntos_Ord");
+     resultado = document.getElementById("p_resultado");
+     img_Ord = document.getElementById("img_ordenador");
+     div_ImgOrd=document.getElementById("jugada_ordenador");
 }
 function jugar(jugada_usu) {
 
@@ -30,6 +28,7 @@ function jugar(jugada_usu) {
         case "pr":
         case "tp":
             jugador_Gana(jugada_usu, jugada_ord);
+
             break;
         case "rp":
         case "pt":
@@ -61,7 +60,8 @@ function jugador_Gana(jugada_usu, jugada_ord) {
    // por ejemplo "Piedra gana tijeras"
    puntos_usu++;
    puntos_usu_span.innerHTML = puntos_usu;
-   resultado.innerHTML = mostrarNombre(jugada_usu) + "gana a " + mostrarNombre(jugada_ord);
+  
+   resultado.innerHTML = puntos_usu;
    console.log("gana usuario ole ole ganasteeeee");
    console.log(" los puntos del usuario: "+ puntos_usu);
 }
@@ -72,7 +72,7 @@ function jugador_Pierde(jugada_usu, jugada_ord) {
    puntos_ord_span.innerHTML = puntos_ord;
    resultado.innerHTML = mostrarNombre(jugada_usu) + "pierde a " + mostrarNombre(jugada_ord); 
     console.log("usuario pierde lo sentimos mucho");
-    console.log("los puntos sonnnn " + puntos_ord);
+    console.log("los puntos son " + puntos_ord);
    
 }
 function empate() {
@@ -84,10 +84,10 @@ function mostrarNombre(id) {
    //convertimos la r en piedra, la p en papel y la t en tijeras
    switch (id) {
     case 'r':
-        return "Piedra";
+        return "Piedra ";
     case 't':
-        return "Tijeras";
+        return "Tijeras ";
     case 'p':
-        return "Papelito";
+        return "Papelito ";
    }
 }
